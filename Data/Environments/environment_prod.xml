@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Environment>
+    <framework>
+        <paths>
+            <jsonpayloads>./Data/payloads/JSON/</jsonpayloads>
+            <xmlpayloads>./Data/payloads/XML/</xmlpayloads>
+            <urlencodedpayloads>./Data/payloads/URLENCODED/</urlencodedpayloads>
+        </paths>
+        <mailformatfolder>./Data/MailFormats/ </mailformatfolder>
+    </framework>
+    <name>prod</name>
+    <services>
+        <endpoints>
+            <endpoint core="pet" servicename="petmodule" baseurl="https://petstore3.swagger.io"  port="" protocol="https" authenticationrequired="false" userid="" password="" securitytoken=""  />
+            <endpoint core="store" servicename="storemodule" baseurl="https://petstore3.swagger.io"  port="" protocol="https" authenticationrequired="false" userid="" password="" securitytoken=""  />
+        </endpoints>
+        <apis>
+            <api servicename ="petmodule" apiname="getPetByStatus" name="" path="api/v3/pet/findByStatus?status=${0}" requestmethod="GET" payloadrequired="false" queryparamsrequired="true" payloadtype="json" stafapiname="" />
+            <api servicename ="petmodule" apiname="addPetToStore" name="" path="api/v3/pet" requestmethod="POST" payloadrequired="false" queryparamsrequired="false" payloadtype="json" stafapiname="" />
+            <api servicename ="storemodule" apiname="placeOrder" name="" path="api/v3/store/order" requestmethod="POST" payloadrequired="false" queryparamsrequired="false" payloadtype="json" stafapiname="" />
+            <api servicename ="storemodule" apiname="getOrderDetails" name="" path="api/v3/store/order/${0}" requestmethod="GET" payloadrequired="false" queryparamsrequired="true" payloadtype="json" stafapiname="" />
+        </apis>
+    </services>
+    <websocket>
+        <connectiondetails name="" uri=""/>
+    </websocket>
+</Environment>

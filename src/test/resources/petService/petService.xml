@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="petStoreSuite" verbose="1">
+    <parameter name="team" value="petStore" />
+    <parameter name="type" value="Regression" />
+    <listeners>
+        <listener class-name="petStoreBase.framework.listener.PetStoreListener"></listener>
+        <listener class-name="petStoreBase.framework.listener.PetStoreListener" />
+    </listeners>
+    <test name="PetServiceTests"  preserve-order="true" parallel="false">
+        <groups>
+            <run>
+                <exclude name="nothing"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.petStore.services.petService.tests.AddPetsToStoreTests" />
+            <class name="com.petStore.services.petService.tests.GetPetByStatusTests" />
+        </classes>
+    </test>
+</suite>
